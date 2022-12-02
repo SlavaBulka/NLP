@@ -7,3 +7,22 @@ python -m deeppavlov riseapi ner_ontones_bert_mult -p 5005
 Получаем примерно следущее:
 
 ![1](https://user-images.githubusercontent.com/87085844/205342903-fd351a65-a953-4f36-ab7a-d6c46ee9fc77.png)
+
+
+Итак, после того как мы подняли сервер API, нам нужно предоставить к нему доступ из любой сети, для этого воспользуемся сервисом Localtunnel
+Вводим в консоль следущие 2 команды: 
+1. npm install -g localtunnel (устанавливаем localtunnel глобально)
+2. lt --port 5005 (запускаем локальный сервер на порту 5005) и получаем уникальный URL адрес
+
+![2](https://user-images.githubusercontent.com/87085844/205344305-9cf2b975-f725-49fa-b09b-58b8e1380506.png)
+
+Теперь, когда у нас есть ссылка на локальный сервер, мы можем подключиться к нему с другого компьютера и послать туда какой-нибудь input
+{
+"переменная": ["name1","name2","name3","name4"]
+}
+
+![3](https://user-images.githubusercontent.com/87085844/205345571-f92a87c7-4b26-4156-9f59-affc09d1df13.png)
+
+Видим, что наша модель отвечает на наш запрос адекватно, без ошибок
+
+![4](https://user-images.githubusercontent.com/87085844/205345976-c1a47521-abec-455e-8192-887e2eef3ec3.png)
